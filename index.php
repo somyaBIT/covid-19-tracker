@@ -3,8 +3,6 @@
 
 <head>
     <title>Covid-19 Tracker</title>
-    <?php include 'link/link.php'; ?>
-    <?php include 'css/style.php'; ?>
     
 </head>
 
@@ -88,7 +86,7 @@
             </div>
            
             <div class="table-responsive" > 
-            <canvas id="myChart" style="min-height:70vh" class="table" ></canvas>
+            <canvas  style="min-height:70vh" class="table" ></canvas>
             </div>
             
            
@@ -325,7 +323,7 @@
         <div class="copyright">
      
          <p>
-              Copyright © SOMYA SINGH </P>
+              I copied from SOMYA SINGH --->> https://github.com/somyaBIT</P>
           </div>
       </div>
  </footer> 
@@ -355,22 +353,7 @@ function topFunction() {
 }
   // live data animation
 
-window.onload = function () {
-       
-$('.count').each(function () {
-            $(this).prop('Counter',0).animate({
-                Counter: $(this).text()
-            }, {
-                duration: 4000,
-                easing: 'swing',
-                step: function (now) {
-                    $(this).text(Math.ceil(now));
-                }
-            });
-        
-        });       
 
-}
 </script>
  <?php  
  include'dbcon.php';
