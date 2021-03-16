@@ -3,22 +3,26 @@
 
 <head>
     <title>Covid-19 Tracker</title>
+    <?php include 'link/link.php'; ?>
+    <?php include 'css/style.php'; ?>
     
 </head>
 
 <body >
+<!-- .........................................NAVBAR........................................................................... -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <img src="./image/icon3.png" class="navbar-brand" >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
     
-    <nav class="navbar navbar-expand-lg nav_style ">
-        <a class="navbar-brand pl=5" href="#"><img src="image/c3.png" width="200px" height="78px">COVID-19</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+            </ul>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ml-auto pr=5 text-capitalize">
-                <li class="nav-item active">
+            <ul class="navbar-nav">
+    <li class="nav-item active">
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
@@ -37,8 +41,16 @@
                     <a class="nav-link" href="#contactid">Contact</a>
                 </li>
             </ul>
-        </div>
-    </nav>
+  </div>
+</nav>
+<!--  -->
+<div class="class_alert container-fluid text-center p-4">
+  <p class="">COVID-19 Tracker</p>
+</div>
+
+<!--..............................................................main-head.........................................................  -->
+
+
     <div class="main_header">
         <div class="row w-100 h-100">
             <div class="col-lg-5 col-mid-5 col-12 order-lg-1 order-2">
@@ -85,8 +97,8 @@
              <h6 class="text-info "> Click on the Confirmed/Recovered/Deaths buttons to see the chart individually. </h6> 
             </div>
            
-            <div class="table-responsive" > 
-            <canvas  style="min-height:70vh" class="table" ></canvas>
+            <div class="chart" > 
+            <canvas id="myChart"   ></canvas>
             </div>
             
            
@@ -119,6 +131,7 @@
             </div>
         </div>
     </div>
+    <!-- ......................................................MAp......................................................................................... -->
     <div class="container">
     <iframe width="100%" height="576" src="https://app.developer.here.com/coronavirus/" frameborder="0"></iframe>
 </div>
@@ -267,7 +280,7 @@
                 <div class="col-lg-8  offset-lg-2 col-12">
                 <form action="" method="GET">
     <div class="form-group">
-    <label >Username</label>
+    <label >Name</label>
     <input type="text" class="form-control" name="username" placeholder="name" autocomplete="off" required>
   </div>
   <div class="form-group">
@@ -323,7 +336,7 @@
         <div class="copyright">
      
          <p>
-              I copied from SOMYA SINGH --->> https://github.com/somyaBIT</P>
+              Copyright © <a class="footer_link" href="https://github.com/somyaBIT">SOMYA SINGH</a> </p>
           </div>
       </div>
  </footer> 
@@ -353,7 +366,22 @@ function topFunction() {
 }
   // live data animation
 
+window.onload = function () {
+       
+$('.count').each(function () {
+            $(this).prop('Counter',0).animate({
+                Counter: $(this).text()
+            }, {
+                duration: 4000,
+                easing: 'swing',
+                step: function (now) {
+                    $(this).text(Math.ceil(now));
+                }
+            });
+        
+        });       
 
+}
 </script>
  <?php  
  include'dbcon.php';
