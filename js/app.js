@@ -2,7 +2,7 @@
 // /* ---------------------------------------------- // API URL AND KEY----------------------------------------------*/
 $(document).ready(function () {
     // Get JSON data from url 
-    $.getJSON("yoururl", function (data) {
+    $.getJSON("https://api.covid19india.org/data.json", function (data) {
         var states = [];
         var confirmed = [];
         var recovered = [];
@@ -63,10 +63,10 @@ $(document).ready(function () {
                 },
                 ],
             },
-            option: {
-                responsive: true,
-                maintainAspectRatio:false,
-            },
+           options: {
+			responsive : true,
+			maintainAspectRatio : false
+		}
         });
     });
 });
