@@ -23,8 +23,10 @@ body {
 }
 
 
-.nav_style{
+.class_alert{
     background-color: #a29bfe;
+    font-weight:bolder;
+    font-size:2rem;
 }
 .nav_style a{
     color:white;
@@ -111,8 +113,11 @@ footer{
 #myBtnn:hover {
   background-color: #555;
 }
- 
-
+.footer_link
+{
+    color:white;
+    text-decoration:none;
+    }
 @media screen and (max-width: 768px){
      .main_header{
          height:700px;
@@ -131,10 +136,8 @@ footer{
 
      }
      
-.table-responsive{
-    height: 100% !important;
+                
 
-} 
      /* .wrapper{
     height:100vh !important;
     width:100vw  ! important ; */
@@ -143,4 +146,17 @@ footer{
 
     
             }
+
+    .chart{
+    width: 80%;
+    height: 70vh;
+    min-height: 500px;
+    margin: 0 auto;
+    padding: 50px 0;
+
+
+
+
+} 
+ 
 </style>
